@@ -24,8 +24,8 @@ function preload() {
   img = loadImage('gameover.png');
   img2 = loadImage('ajoshi.png');
   soundFormats('mp3', 'wav');
-  clicksound = loadSound('sonotcoool.mp3');
-  bbsound = loadSound('bbodk.wav');
+  //clicksound = loadSound('sonotcoool.mp3');
+  bbsound = loadSound('bbodk.mp3');
   
 }
 
@@ -99,6 +99,6 @@ frameRate(fr);
 
 function mousePressed() {
   bbsound.play();
-  delay.delayTime(10);
-  clicksound.play();
+  //delay.delayTime(10);
+  //clicksound.play();
 }
