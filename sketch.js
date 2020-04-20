@@ -29,7 +29,9 @@ function setup() {
 }
 
 function draw() {
-  background(mouseX, mouseY, 100);
+  let x = map(mouseX, 0, width, 0, 255);
+  let y = map(mouseY, 0, height, 0, 255);
+  background(x, y, 100);
   colorMode(RGB, 1);
   // set light
   ambientLight(0.2);
@@ -45,17 +47,23 @@ function draw() {
   fill(h, 100, 100, 60);
   // display a glass box
   stroke(0, 0, 100);
-  box(305, 455, 200);
+  box(380, 380, 380);
   //dino2
   scale(200.0);
   rotateY(frameCount * mouseY * 0.0001);
   rotateZ(frameCount * mouseX * 0.0001);
   translate(0.3, 0, 0);
   model(DINO);
+  rotateY(frameCount * mouseY * 0.0001);
+  rotateZ(frameCount * mouseX * 0.0001);
   translate(-0.3, 0.1, 0);
   model(DINOO);
+  rotateY(frameCount * mouseY * 0.0001);
+  rotateZ(frameCount * mouseX * 0.0001);
   translate(0.2, 0.2, 0);
   model(DINOOO);
+  rotateY(frameCount * mouseY * 0.0001);
+  rotateZ(frameCount * mouseX * 0.0001);
   translate(-0.4, 0.2, 0);
   model(DINOOOO);
 }
@@ -66,7 +74,6 @@ function mousePressed() {
   } else {
     apeshit.play();
   }
-  apeshit.play();
 }
 
 function keyPressed() {
