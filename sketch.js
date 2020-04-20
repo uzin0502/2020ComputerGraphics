@@ -50,20 +50,20 @@ function draw() {
   box(380, 380, 380);
   //dino2
   scale(200.0);
-  rotateY(frameCount * mouseY * 0.0001);
-  rotateZ(frameCount * mouseX * 0.0001);
+  rotateY(frameCount * 0.03);
+  rotateZ(frameCount * 0.03);
   translate(0.3, 0, 0);
   model(DINO);
-  rotateY(frameCount * mouseY * 0.0001);
-  rotateZ(frameCount * mouseX * 0.0001);
+  rotateY(frameCount * 0.03);
+  rotateZ(frameCount * 0.03);
   translate(-0.3, 0.1, 0);
   model(DINOO);
-  rotateY(frameCount * mouseY * 0.0001);
-  rotateZ(frameCount * mouseX * 0.0001);
+  rotateY(frameCount * 0.03);
+  rotateZ(frameCount * 0.03);
   translate(0.2, 0.2, 0);
   model(DINOOO);
-  rotateY(frameCount * mouseY * 0.0001);
-  rotateZ(frameCount * mouseX * 0.0001);
+  rotateY(frameCount * 0.03);
+  rotateZ(frameCount * 0.03);
   translate(-0.4, 0.2, 0);
   model(DINOOOO);
 }
