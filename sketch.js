@@ -12,7 +12,7 @@ let DINOOOO;
 
 function preload() {
   soundFormats('mp3', 'wav');
-  apeshit = loadSound("APESHIT.mp3");
+  apeshit = loadSound("Stupid Love.mp3");
   dino1 = loadModel("empty.obj");
   dino2 = loadModel("dino2.obj");
   dino3 = loadModel("dino3.obj");
