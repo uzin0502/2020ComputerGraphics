@@ -59,6 +59,7 @@ function draw() {
   translate(-0.3, 0.1, 0);
   model(DINOO);
   rotateY(frameCount * 0.03);
+  rotateX(frameCount * 0.03);
   rotateZ(frameCount * 0.03);
   translate(0.2, 0.2, 0);
   model(DINOOO);
