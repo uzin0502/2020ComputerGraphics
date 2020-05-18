@@ -1,5 +1,5 @@
 //YAY!
-let apeshit;
+let charlie;
 let dino1;
 let dino2;
 let dino3;
@@ -9,26 +9,50 @@ let DINO;
 let DINOO;
 let DINOOO;
 let DINOOOO;
+let city;
+let rock0;
+let rock1;
+let rock2;
+let rock3;
+let rock4;
+let rock5;
+let rock6;
+let rock7;
+let loveAngle = 0;
 
 function preload() {
-  soundFormats('mp3', 'wav');
-  apeshit = loadSound("Stupid Love.mp3");
+  soundFormats('mp3', 'm4a');
+  charlie = loadSound("Voice 004.m4a");
   dino1 = loadModel("empty.obj");
   dino2 = loadModel("dino2.obj");
   dino3 = loadModel("dino3.obj");
   dino4 = loadModel("dino4.obj");
   dino5 = loadModel("dino5.obj");
+  city = loadModel("Space Station Scene.obj");
+  rock0 = loadModel("Rock0.obj");
+  rock1 = loadModel("Rock1.obj");
+  rock2 = loadModel("Rock4.obj");
+  rock3 = loadModel("Rock5.obj");
+  rock4 = loadModel("Rock8.obj");
+  rock5 = loadModel("Rock6.obj");
+  rock6 = loadModel("Rock7.obj");
+  rock7 = loadModel("Rock9.obj");
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  DINO = dino1;
-  DINOO = dino1;
-  DINOOO = dino1;
-  DINOOOO = dino1;
+  DINO = dino2;
+  DINOO = dino3;
+  DINOOO = dino4;
+  DINOOOO = dino5;
+  angleMode(DEGREES);
 }
 
 function draw() {
+
+  let banjireum = 700;
+  loveAngle++;
+  camera(banjireum * sin(loveAngle), 0, (banjireum+4) * cos(loveAngle), 0, 0, 0, 0, 1, 0);
   let x = map(mouseX, 0, width, 0, 255);
   let y = map(mouseY, 0, height, 0, 255);
   background(x, y, 100);
@@ -37,72 +61,58 @@ function draw() {
   ambientLight(0.2);
   specularColor(1, 1, 1);
   directionalLight(1, 1, 1, 0, 0, -1);
-  // Ld and Ls
-  // let mouse X control rotation
   let r = map(mouseX, 0, width, -radians(180), radians(180));
   rotateY(r);
   let h = map(mouseY, 0, height, 0, 360);
   colorMode(HSB, 360, 100, 100, 100);
-  // material setting
   fill(h, 100, 100, 60);
-  // display a glass box
   stroke(0, 0, 100);
-  box(380, 380, 380);
-  //dino2
-  scale(200.0);
-  rotateY(frameCount * 0.03);
-  rotateZ(frameCount * 0.03);
+  translate(0,140,0);
+  normalMaterial();
+  scale(5);
+  model(city);
+  scale(90);
+  rotateY(frameCount);
+  rotateZ(frameCount);
   translate(0.3, 0, 0);
   model(DINO);
-  rotateY(frameCount * 0.03);
-  rotateZ(frameCount * 0.03);
+  rotateY(frameCount);
+  rotateZ(frameCount);
   translate(-0.3, 0.1, 0);
   model(DINOO);
-  rotateY(frameCount * 0.03);
+  rotateY(frameCount);
   rotateX(frameCount * 0.03);
   rotateZ(frameCount * 0.03);
   translate(0.2, 0.2, 0);
   model(DINOOO);
-  rotateY(frameCount * 0.03);
-  rotateZ(frameCount * 0.03);
-  translate(-0.4, 0.2, 0);
+  rotateY(frameCount);
+  rotateZ(frameCount);
+  translate(-4, 2, 0);
   model(DINOOOO);
+  scale(0.0005);
+  translate(10, 5, 2);
+  model(rock0);
+  translate(-1000, -1000, -500);
+  model(rock1);
+  translate(1000, 4000, 1000);
+  model(rock2);
+  translate(-3000, 13000, 4000);
+  model(rock3);
+  translate(18000, -5000, 5000);
+  model(rock4);
+  translate(600, -400, 2000);
+  model(rock5);
+  translate(-1100, 1000, -1000);
+  model(rock6);
+  translate(-4000, 12000, 300);
+  model(rock7);
+
 }
 
 function mousePressed() {
-  if (apeshit.isPlaying()) {
-    apeshit.stop();
+  if (charlie.isPlaying()) {
+    charlie.stop();
   } else {
-    apeshit.play();
+    charlie.play();
   }
-}
-
-function keyPressed() {
-  if (keyCode === UP_ARROW) {
-    if (DINO == dino2) {
-      DINO = dino1;
-    } else {
-      DINO = dino2;
-    }
-  } else if (keyCode === DOWN_ARROW) {
-    if (DINOO == dino3) {
-      DINOO = dino1;
-    } else {
-      DINOO = dino3;
-    }
-
-  } else if (keyCode === LEFT_ARROW) {
-    if (DINOOO == dino4) {
-      DINOOO = dino1;
-    } else {
-      DINOOO = dino4;
-    }
-  } else if (keyCode === RIGHT_ARROW) {
-    if (DINOOOO == dino5) {
-      DINOOOO = dino1;
-    } else {
-      DINOOOO = dino5;
-    }
-  }
-  return false; // prevent default
 }
